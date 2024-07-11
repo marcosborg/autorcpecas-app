@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Auto RC Peças</string>
+    <string name="title_activity_main">Auto RC Peças</string>
+    <string name="package_name">pt.autorcpecas.logistics</string>
+    <string name="custom_url_scheme">pt.autorcpecas.logistics</string>
+</resources>
