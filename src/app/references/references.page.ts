@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 import {
   IonContent,
   IonHeader,
   IonTitle,
   IonToolbar,
-  Ionbuttons,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -21,7 +21,7 @@ import {
     IonToolbar,
     CommonModule,
     FormsModule,
-    Ionbuttons,
+    HeaderComponent,
   ]
 })
 export class ReferencesPage implements OnInit {

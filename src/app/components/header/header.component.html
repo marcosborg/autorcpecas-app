@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start" *ngIf="showBackButton">
+      <ion-back-button defaultHref="/references" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <div class="img-container">
+        <ion-img src="../../../assets/logo.svg" class="img-header"></ion-img>
+      </div>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()"><ion-icon name="lock-closed"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
