@@ -1,9 +1,4 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Login</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content>
+<ion-content *ngIf="screen">
   <ion-card>
     <ion-img src="../../assets/logo.png" />
     <ion-card-header>
@@ -23,7 +18,7 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
-<ion-footer>
+<ion-footer *ngIf="screen">
   <ion-toolbar color="success">
     <ion-button size="large" expand="full" fill="clear" color="light" (click)="login()">Login</ion-button>
   </ion-toolbar>
