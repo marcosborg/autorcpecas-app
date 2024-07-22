@@ -9,19 +9,25 @@
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>
-            Referências
-            <p><ion-badge *ngFor="let code of codes">{{ code }}</ion-badge></p>
-          </ion-label>
-        </ion-item>
-        <ion-item>
           <ion-select label="Fabricante" label-placement="floating" [(ngModel)]="manufacturer_id">
             <ion-select-option value="{{ manufacturer.id }}" *ngFor="let manufacturer of manufacturers">{{
               manufacturer.name }}</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
-          <ion-select label="Categoria" label-placement="floating" [(ngModel)]="category_id">
+          <ion-label>
+            Referências
+            <p><ion-badge *ngFor="let code of codes">{{ code }}</ion-badge></p>
+          </ion-label>
+        </ion-item>
+        <ion-item *ngIf="product_categories.length > 0">
+          <ion-label>
+            Categorias
+            <p><ion-badge *ngFor="let product_category of product_categories">{{ product_category.name[0].value }}</ion-badge></p>
+          </ion-label>
+        </ion-item>
+        <ion-item *ngIf="categories !== undefined">
+          <ion-select label="Categoria" label-placement="floating" [(ngModel)]="category_id" (ionChange)="categorySelect()">
             <ion-select-option value="{{ category.id }}" *ngFor="let category of categories">{{ category.name
               }}</ion-select-option>
           </ion-select>

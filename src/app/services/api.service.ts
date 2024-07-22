@@ -42,7 +42,7 @@ export class ApiService {
         'Authorization': 'Bearer ' + data.access_token
       })
     };
-    return this.http.get(this.url + 'get-categories', this.httpOptions);
+    return this.http.get(this.url + 'get-categories/' + data.category_id, this.httpOptions);
   }
 
   getManufacturers(data: any) {
@@ -52,8 +52,37 @@ export class ApiService {
         'Authorization': 'Bearer ' + data.access_token
       })
     };
-
     return this.http.get(this.url + 'get-manufacturers', this.httpOptions);
+  }
+
+  getManufacturer(data: any) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Accept-Language': 'pt',
+        'Authorization': 'Bearer ' + data.access_token
+      })
+    };
+    return this.http.get(this.url + 'get-manufacturer/' + data.manufacturer_id, this.httpOptions);
+  }
+
+  getCategory(data: any) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Accept-Language': 'pt',
+        'Authorization': 'Bearer ' + data.access_token
+      })
+    };
+    return this.http.get(this.url + 'get-category/' + data.category_id, this.httpOptions);
+  }
+
+  createProduct(data: any) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Accept-Language': 'pt',
+        'Authorization': 'Bearer ' + data.access_token
+      })
+    };
+    return this.http.post(this.url + 'create-product', data, this.httpOptions);
   }
 
 }
