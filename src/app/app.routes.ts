@@ -9,4 +9,8 @@ export const routes: Routes = [
     path: 'references',
     loadComponent: () => import('./references/references.page').then( m => m.ReferencesPage)
   },
+  {
+    path: 'product',
+    loadComponent: () => import('./product/product.page').then( m => m.ProductPage)
+  },
 ];

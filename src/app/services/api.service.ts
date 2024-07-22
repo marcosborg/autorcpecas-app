@@ -23,4 +23,37 @@ export class ApiService {
     return this.http.post(this.url + 'login', data, this.httpOptions);
   }
 
+  sendPhoto(data: any) {
+
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Accept-Language': 'pt',
+        'Authorization': 'Bearer ' + data.access_token
+      })
+    };
+
+    return this.http.post(this.url + 'send-photo', data, this.httpOptions);
+  }
+
+  getCategories(data: any) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Accept-Language': 'pt',
+        'Authorization': 'Bearer ' + data.access_token
+      })
+    };
+    return this.http.get(this.url + 'get-categories', this.httpOptions);
+  }
+
+  getManufacturers(data: any) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Accept-Language': 'pt',
+        'Authorization': 'Bearer ' + data.access_token
+      })
+    };
+
+    return this.http.get(this.url + 'get-manufacturers', this.httpOptions);
+  }
+
 }
