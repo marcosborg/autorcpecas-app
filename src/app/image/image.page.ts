@@ -141,9 +141,16 @@ export class ImagePage implements OnInit {
           backdropDismiss: false,
           buttons: [
             {
-              text: 'Continuar',
+              text: 'Continuar a tirar fotografias',
               handler: () => {
-                
+                this.imageUrl = 'https://ionicframework.com/docs/img/demos/card-media.png';
+                this.photo = false;
+              }
+            },
+            {
+              text: 'Concluir',
+              handler: () => {
+                this.router.navigateByUrl('references');
               }
             }
           ]
