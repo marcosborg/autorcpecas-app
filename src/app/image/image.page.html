@@ -1,5 +1,21 @@
 <app-header></app-header>
 
 <ion-content>
-
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Tirar foto</ion-card-title>
+            <ion-card-subtitle>Utilize um local bem iluminado e tire fotografias, uma a uma. A primeira será a imagem de capa.</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-img [src]="imageUrl"></ion-img>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
+<ion-footer>
+    <ion-toolbar color="success" *ngIf="photo == true">
+        <ion-button expand="full" fill="clear" color="light" (click)="uploadImage()">Gravar fotografia</ion-button>
+    </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-button expand="full" fill="clear" color="dark" (click)="takePicture()">Tirar foto</ion-button>
+    </ion-toolbar>
+</ion-footer>

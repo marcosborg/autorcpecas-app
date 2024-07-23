@@ -85,4 +85,14 @@ export class ApiService {
     return this.http.post(this.url + 'create-product', data, this.httpOptions);
   }
 
+  uploadImage(data: any) {
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Accept-Language': 'pt',
+        'Authorization': 'Bearer ' + data.access_token
+      })
+    };
+    return this.http.post(this.url + 'upload-image', data, this.httpOptions);
+  }
+
 }
