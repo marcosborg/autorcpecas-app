@@ -84,7 +84,7 @@ export class ReferencesPage implements OnInit {
     this.photo = false;
     const image = await Camera.getPhoto({
       quality: 50,
-      allowEditing: false,
+      allowEditing: true,
       resultType: CameraResultType.Base64
     });
 
