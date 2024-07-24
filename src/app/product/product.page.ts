@@ -152,7 +152,9 @@ export class ProductPage implements OnInit {
         }
         this.api.getManufacturer(data).subscribe((resp: any) => {
           this.manufacturer = resp.manufacturers[0];
+          this.codes.shift();
           let references = this.codes.join(',');
+
           let names_pt: any = [];
           let names_es: any = [];
           let names_en: any = [];
@@ -161,6 +163,10 @@ export class ProductPage implements OnInit {
             names_es.push(category.name[1].value);
             names_en.push(category.name[2].value);
           });
+
+          names_pt.shift();
+          names_es.shift();
+          names_en.shift();
 
           let name_pt = names_pt.join(' ');
           let name_es = names_es.join(' ');
@@ -179,6 +185,7 @@ export class ProductPage implements OnInit {
             name_en: name_en + ' - ' + this.manufacturer.name,
             part_name: this.part_name,
           }
+
           this.api.createProduct(data).subscribe((resp: any) => {
             loading.dismiss();
             if (resp.id != '' && resp.warnings.length > 0) {

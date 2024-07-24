@@ -70,6 +70,11 @@ export class ReferencesPage implements OnInit {
   photo: boolean = false;
   codes: any[] = [];
 
+  ionViewWillEnter() {
+    this.photo = false;
+    this.codes = [];
+  }
+
   ngOnInit() {
     this.preferences.checkName('access_token').then((resp) => {
       if (!resp.value) {
@@ -124,6 +129,7 @@ export class ReferencesPage implements OnInit {
         access_token: this.access_token,
         imageUrl: this.imageUrl
       }
+      console.log(data);
       this.api.sendPhoto(data).subscribe((resp: any) => {
         this.codes = resp;
         console.log(this.codes);

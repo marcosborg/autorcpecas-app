@@ -77,8 +77,8 @@ export class ImagePage implements OnInit {
   takePicture = async () => {
     this.photo = false;
     const image = await Camera.getPhoto({
-      quality: 50,
-      allowEditing: false,
+      quality: 70,
+      allowEditing: true,
       resultType: CameraResultType.Base64
     });
 
