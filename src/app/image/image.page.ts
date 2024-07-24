@@ -150,7 +150,7 @@ export class ImagePage implements OnInit {
             {
               text: 'Concluir',
               handler: () => {
-                this.router.navigateByUrl('references');
+                window.location.href='/references';
               }
             }
           ]
