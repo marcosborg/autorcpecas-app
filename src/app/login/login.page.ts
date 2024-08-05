@@ -58,8 +58,8 @@ export class LoginPage implements OnInit {
     private router: Router
   ) { }
 
-  email: string = 'marcosborges@netlook.pt';
-  password: string = 'Leonor(2024)';
+  email: string = '';
+  password: string = '';
   screen: boolean = false;
 
   ngOnInit() {

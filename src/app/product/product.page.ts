@@ -152,7 +152,7 @@ export class ProductPage implements OnInit {
         }
         this.api.getManufacturer(data).subscribe((resp: any) => {
           this.manufacturer = resp.manufacturers[0];
-          this.codes.shift();
+
           let references = this.codes.join(',');
 
           let names_pt: any = [];
@@ -185,7 +185,6 @@ export class ProductPage implements OnInit {
             name_en: name_en + ' - ' + this.manufacturer.name,
             part_name: this.part_name,
           }
-
           this.api.createProduct(data).subscribe((resp: any) => {
             loading.dismiss();
             if (resp.id != '' && resp.warnings.length > 0) {

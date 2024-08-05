@@ -63,7 +63,7 @@ export class HeaderComponent implements OnInit {
           text: 'Encerrar a sessão',
           handler: () => {
             this.preferences.removeName('access_token').then(() => {
-              this.router.navigateByUrl('/');
+              window.location.href="/";
             });
           }
         }
